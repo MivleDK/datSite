@@ -11,9 +11,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="lightbulb.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
 </head>
-
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -70,32 +72,35 @@
     <div class="row">
       <div class="col-md">
 
-      <p>Ja, der er kun efterspurgt løsninger på opgave 3, 5 og 6...</p><br />
+        <p>Ja, der er kun efterspurgt løsninger på opgave 3, 5 og 6...</p><br />
       </div>
 
     </div>
     <div class="row">
       <div class="col-md">
-      <h2>Opgave 3</h2><br />
-      <p class="text-monospace alert alert-warning">Opret en side i HTML og forskøn den med en ekstern .css fil.</p><br />
-      <p>Jeg skulle mene, at den er klaret på siden her, men for en sikkerheds skyld kommer koden her (Som den ser ud på denne side):</p><br />
+        <h2>Opgave 3</h2><br />
+        <p class="text-monospace alert alert-warning">Opret en side i HTML og forskøn den med en ekstern .css fil.</p><br />
+        <p>Jeg skulle mene, at den er klaret på siden her, men for en sikkerheds skyld kommer koden her (Som den ser ud på denne side):</p><br />
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-<pre><code class="html">&lt;!DOCTYPE html&gt;
+        <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
   &lt;head&gt;
     &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Min titel&lt;/title&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Mick Larsen DAT2SEM2020&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;mickcustom.css&quot;&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;highlight/styles/atom-one-dark.css&quot;&gt;
     &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js&quot;&gt;&lt;/script&gt;
     &lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;hightlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;highlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
 
@@ -105,7 +110,127 @@
       </div>
     </div>
 
-  </div><!-- Sidste div hører til main container -->
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h2>Opgave 5</h2><br />
+        <p class="text-monospace alert alert-warning">Formatér første linke i en tekst, så den er responsiv (Følger browserens størrelse)</p><br />
+        <p>Lad os starte med løsningen:</p><br />
+        <p id="firstlineformat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend purus vitae imperdiet faucibus. Curabitur molestie leo in ultricies ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+          nec luctus enim. Cras non purus elit. Duis ac finibus ex, sed lobortis ex. Donec rutrum mauris orci. Vestibulum in nunc a dui dictum efficitur eu et eros. Suspendisse at enim eget ex euismod vulputate a ac justo. Pellentesque tortor tortor,
+          porta ut vulputate sed, bibendum eget libero. Vestibulum elementum mi mollis, fringilla magna sit amet, vehicula sapien. Ut sed velit ante. Integer id quam molestie, euismod augue vitae, mattis nisl. Curabitur consequat, lectus sollicitudin
+          suscipit congue, velit ipsum tristique nisl, maximus euismod ante arcu quis quam. Nulla tincidunt turpis mi, id mattis turpis interdum vitae. Mauris venenatis libero non leo lobortis, vitae feugiat purus bibendum. Curabitur in volutpat purus.
+          Integer commodo commodo mi vitae commodo. Praesent venenatis felis nunc, eget pharetra ante placerat vel. Vivamus nibh odio, malesuada et enim in, lacinia efficitur nunc.</p>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h6>Det løses ved, at give tekstens paragraf et unikt #id som skal targetes med css:</h6>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <pre><code class="html">#firstlineformat::first-line{
+  color: rgb(255, 0, 0);
+  font-style: italic;
+}
+
+&lt;p id=&quot;firstlineformat&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend purus vitae imperdiet faucibus. Curabitur molestie leo in ultricies ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque nec luctus enim. Cras non purus elit. Duis ac finibus ex, sed lobortis ex. Donec rutrum mauris orci. Vestibulum in nunc a dui dictum efficitur eu et eros. Suspendisse at enim eget ex euismod vulputate a ac justo.
+Pellentesque tortor tortor, porta ut vulputate sed, bibendum eget libero. Vestibulum elementum mi mollis, fringilla magna sit amet, vehicula sapien. Ut sed velit ante. Integer id quam molestie, euismod augue vitae, mattis nisl. Curabitur consequat, lectus sollicitudin suscipit congue, velit ipsum tristique nisl, maximus euismod ante arcu quis quam. Nulla tincidunt turpis mi, id mattis turpis interdum vitae. Mauris venenatis libero non leo lobortis, vitae feugiat purus bibendum. Curabitur in volutpat purus. Integer commodo commodo mi vitae commodo. Praesent venenatis felis nunc, eget pharetra ante placerat vel. Vivamus nibh odio, malesuada et enim in, lacinia efficitur nunc.&lt;/p&gt;</code>
+</pre>
+      </div>
+    </div>
+<br />
+
+<div class="row">
+  <div class="col-md">
+    <h2>Opgave 6</h2><br />
+    <p class="text-monospace alert alert-warning">Få en pære til at tænde/slukke med javascript</p><br />
+    <p>Lad os, endnu engang, starte med løsningen:</p><br />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md"></div>
+  <div class="col-md">
+      <img id="myimage" src="img/pic_bulboff.gif" />
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md"></div>
+  <div class="col-md">
+  <button type="button" onclick="light(1)" class="btn btn-success">Tænd</button>
+  <button type="button" onclick="light(0)" class="btn btn-dark">Sluk</button>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md">
+    <h6>Og kildekoden</h6><br />
+    <p>Bemærk at javascript er lagt i en ekstern fil, hvorfor stien skal rettes til mappestrukturen på serveren</p><br />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md">
+    <h6>Javascript i "lightbulb.js" i en fil</h6>
+<pre>
+  <code class="javascript">function light(sw){
+    var pic;
+    if(sw == 0){
+      pic = "img/pic_bulboff.gif"
+    } else{
+      pic = "img/pic_bulbon.gif"
+    }
+    document.getElementById("myimage").src=pic;
+  }</code></pre>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md">
+    <h6>HTML koden (Med bootstrap. Det væsentlige er mine &lt;button&gt; tags)</h6>
+<pre>
+  <code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md&quot;&gt;
+      &lt;img id=&quot;myimage&quot; src=&quot;img/pic_bulboff.gif&quot; /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;br /&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;col-md&quot;&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;light(1)&quot; class=&quot;btn btn-success&quot;&gt;T&aelig;nd&lt;/button&gt;
+  &lt;button type=&quot;button&quot; onclick=&quot;light(0)&quot; class=&quot;btn btn-dark&quot;&gt;Sluk&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md">
+    <h6>For at hente javascript ind eksternt indsættes nedestående i &lt;head&gt; sektionen, øverst i HTML filen</h6>
+<pre>
+  <code class="html">&lt;head&gt;
+    &lt;script src=&quot;lightbulb.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;</code></pre>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-md">
+    <h2>Opgave 7</h2><br />
+    <p class="text-monospace alert alert-warning">Opret et "Dynamisk" diagram med AnyChart</p><br />
+    <p>Løsning:</p><br />
+  </div>
+</div>
+
+
+
+</div>
+  <!-- Sidste div hører til main container -->
 </body>
 
 </html>
