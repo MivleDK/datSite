@@ -12,6 +12,7 @@
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="highlight/highlight.pack.js"></script>
   <script src="lightbulb.js"></script>
+  <script src="anychart-installation-package-8.7.1/js/anychart-base.min.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
@@ -142,40 +143,40 @@ Pellentesque tortor tortor, porta ut vulputate sed, bibendum eget libero. Vestib
 </pre>
       </div>
     </div>
-<br />
+    <br />
 
-<div class="row">
-  <div class="col-md">
-    <h2>Opgave 6</h2><br />
-    <p class="text-monospace alert alert-warning">Få en pære til at tænde/slukke med javascript</p><br />
-    <p>Lad os, endnu engang, starte med løsningen:</p><br />
-  </div>
-</div>
-<div class="row">
-  <div class="col-md"></div>
-  <div class="col-md">
-      <img id="myimage" src="img/pic_bulboff.gif" />
-  </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md"></div>
-  <div class="col-md">
-  <button type="button" onclick="light(1)" class="btn btn-success">Tænd</button>
-  <button type="button" onclick="light(0)" class="btn btn-dark">Sluk</button>
-  </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md">
-    <h6>Og kildekoden</h6><br />
-    <p>Bemærk at javascript er lagt i en ekstern fil, hvorfor stien skal rettes til mappestrukturen på serveren</p><br />
-  </div>
-</div>
-<div class="row">
-  <div class="col-md">
-    <h6>Javascript i "lightbulb.js" i en fil</h6>
-<pre>
+    <div class="row">
+      <div class="col-md">
+        <h2>Opgave 6</h2><br />
+        <p class="text-monospace alert alert-warning">Få en pære til at tænde/slukke med javascript</p><br />
+        <p>Lad os, endnu engang, starte med løsningen:</p><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md"></div>
+      <div class="col-md">
+        <img id="myimage" src="img/pic_bulboff.gif" />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md"></div>
+      <div class="col-md">
+        <button type="button" onclick="light(1)" class="btn btn-success">Tænd</button>
+        <button type="button" onclick="light(0)" class="btn btn-dark">Sluk</button>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h6>Og kildekoden</h6><br />
+        <p>Bemærk at javascript er lagt i en ekstern fil, hvorfor stien skal rettes til mappestrukturen på serveren</p><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <h6>Javascript i "lightbulb.js" i en fil</h6>
+        <pre>
   <code class="javascript">function light(sw){
     var pic;
     if(sw == 0){
@@ -185,13 +186,13 @@ Pellentesque tortor tortor, porta ut vulputate sed, bibendum eget libero. Vestib
     }
     document.getElementById("myimage").src=pic;
   }</code></pre>
-  </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md">
-    <h6>HTML koden (Med bootstrap. Det væsentlige er mine &lt;button&gt; tags)</h6>
-<pre>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h6>HTML koden (Med bootstrap. Det væsentlige er mine &lt;button&gt; tags)</h6>
+        <pre>
   <code class="html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;col-md&quot;&gt;
@@ -206,30 +207,385 @@ Pellentesque tortor tortor, porta ut vulputate sed, bibendum eget libero. Vestib
   &lt;button type=&quot;button&quot; onclick=&quot;light(0)&quot; class=&quot;btn btn-dark&quot;&gt;Sluk&lt;/button&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-  </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md">
-    <h6>For at hente javascript ind eksternt indsættes nedestående i &lt;head&gt; sektionen, øverst i HTML filen</h6>
-<pre>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h6>For at hente javascript ind eksternt indsættes nedestående i &lt;head&gt; sektionen, øverst i HTML filen</h6>
+        <pre>
   <code class="html">&lt;head&gt;
     &lt;script src=&quot;lightbulb.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;</code></pre>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h2>Opgave 7</h2><br />
+        <p class="text-monospace alert alert-warning">Opret et "Dynamisk" diagram med AnyChart</p><br />
+        <h6>Løsning:</h6><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md"></div>
+      <div class="col-md">
+        <table class="table" id="tableEx">
+          <thead>
+            <tr>
+              <th scope="col">Produkt</th>
+              <th scope="col">2018</th>
+              <th scope="col">2019</th>
+              <th scope="col">2020</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Biler</th>
+              <td>2587</td>
+              <td>2587</td>
+              <td>2798</td>
+            </tr>
+            <tr>
+              <th>Lastbiler</th>
+              <td>1589</td>
+              <td>1458</td>
+              <td>1256</td>
+            </tr>
+            <tr>
+              <th>Cykler</th>
+              <td>3658</td>
+              <td>3895</td>
+              <td>3025</td>
+            </tr>
+            <tr>
+              <th>El-biler</th>
+              <td>1025</td>
+              <td>1059</td>
+              <td>1063</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md"></div>
+    </div>
+    <br />
+    <div class="row">
+
+      <div class="col-md">
+        <div id="container" style="width: 100%; height: 400px;"></div>
+      </div>
+
+    </div>
+    <script>
+      anychart.onDocumentReady(function() {
+        // create data set on our data
+        var dataSet = anychart.data.set(getData());
+
+        // map data for the first series, take x from the zero column and value from the first column of data set
+        var seriesData_1 = dataSet.mapAs({
+          'x': 0,
+          'value': 1
+        });
+
+        // map data for the second series, take x from the zero column and value from the second column of data set
+        var seriesData_2 = dataSet.mapAs({
+          'x': 0,
+          'value': 2
+        });
+
+        // map data for the third series, take x from the zero column and value from the third column of data set
+        var seriesData_3 = dataSet.mapAs({
+          'x': 0,
+          'value': 3
+        });
+
+        var seriesData_4 = dataSet.mapAs({
+          'x': 0,
+          'value': 4
+        });
+
+        // create line chart
+        var chart = anychart.line();
+
+        // turn on chart animation
+        chart.animation(true);
+
+        // set chart padding
+        chart.padding([10, 20, 5, 20]);
+
+        // turn on the crosshair
+        chart.crosshair()
+          .enabled(true)
+          .yLabel(false)
+          .yStroke(null);
+
+        // set tooltip mode to point
+        chart.tooltip().positionMode('point');
+
+        // set chart title text settings
+        chart.title('Trafikstatistik');
+
+        // set yAxis title
+        chart.yAxis().title('Trafikmængde');
+        chart.xAxis().labels().padding(5);
+
+        // create first series with mapped data
+        var series_1 = chart.line(seriesData_1);
+        series_1.name('Biler');
+        series_1.hovered().markers()
+          .enabled(true)
+          .type('circle')
+          .size(4);
+        series_1.tooltip()
+          .position('right')
+          .anchor('left-center')
+          .offsetX(5)
+          .offsetY(5);
+
+        // create second series with mapped data
+        var series_2 = chart.line(seriesData_2);
+        series_2.name('Lastbiler');
+        series_2.hovered().markers()
+          .enabled(true)
+          .type('circle')
+          .size(4);
+        series_2.tooltip()
+          .position('right')
+          .anchor('left-center')
+          .offsetX(5)
+          .offsetY(5);
+
+        // create third series with mapped data
+        var series_3 = chart.line(seriesData_3);
+        series_3.name('Cykler');
+        series_3.hovered().markers()
+          .enabled(true)
+          .type('circle')
+          .size(4);
+        series_3.tooltip()
+          .position('right')
+          .anchor('left-center')
+          .offsetX(5)
+          .offsetY(5);
+
+        // Og nummer fire
+        var series_4 = chart.line(seriesData_4);
+        series_4.name('El-biler');
+        series_4.hovered().markers()
+          .enabled(true)
+          .type('circle')
+          .size(4);
+        series_4.tooltip()
+          .position('right')
+          .anchor('left-center')
+          .offsetX(5)
+          .offsetY(5);
+
+        // turn the legend on
+        chart.legend()
+          .enabled(true)
+          .fontSize(13)
+          .padding([0, 0, 10, 0]);
+
+        // set container id for the chart
+        chart.container('container');
+        // initiate chart drawing
+        chart.draw();
+      });
+
+      function getData() {
+        return [
+          ['2020', 2798, 1256, 3025, 1063],
+          ['2019', 2659, 1458, 3895, 1059],
+          ['2018', 2587, 1589, 3658, 1025],
+        ]
+      }
+    </script>
+
+    <div class="row">
+      <div class="col-md"><br />
+        <h5>How the F did you do that!?</h5><br />
+        <p>Opgaven ligner opgave 6 da det handler om at hive et eksternt .js bibliotek ind fra <a href="https://www.anychart.com/">AnyChart</a><br /> Det fremgår fint af hjemmesiden at man skal signe up (Buuuh!) for at få adgang til filerne. Jeg er typen
+          som helst undgår cdn (online-hostet) da jeg bedst kan lide at have filerne liggenede på min server. Hvis det skulle gå galt hos CDN'en (Not likely) virker min side stadig, da jeg selv hoster hele pivetøjet.
+          <br />
+          <h1 class="display-4">bla bla. what's next?</h1><br /> Ja, så er det bare at læse <a href="https://docs.anychart.com/Quick_Start/Quick_Start">dokumentation</a> som er ligetil. Jeg kan varmt anbefale deres <a href="https://www.anychart.com/products/anychart/gallery/">Chart gallery!</a><br
+          />Koden får du serveret på et salatfad her:</p><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md&quot;&gt;
+    &lt;table class=&quot;table&quot; id=&quot;tableEx&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope=&quot;col&quot;&gt;Produkt&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;2018&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;2019&lt;/th&gt;
+          &lt;th scope=&quot;col&quot;&gt;2020&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Biler&lt;/th&gt;
+          &lt;td&gt;2587&lt;/td&gt;
+          &lt;td&gt;2587&lt;/td&gt;
+          &lt;td&gt;2798&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Lastbiler&lt;/th&gt;
+          &lt;td&gt;1589&lt;/td&gt;
+          &lt;td&gt;1458&lt;/td&gt;
+          &lt;td&gt;1256&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Cykler&lt;/th&gt;
+          &lt;td&gt;3658&lt;/td&gt;
+          &lt;td&gt;3895&lt;/td&gt;
+          &lt;td&gt;3025&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;th&gt;El-biler&lt;/th&gt;
+          &lt;td&gt;1025&lt;/td&gt;
+          &lt;td&gt;1059&lt;/td&gt;
+          &lt;td&gt;1063&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md&quot;&gt;
+    &lt;div id=&quot;container&quot; style=&quot;width: 100%; height: 400px;&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+anychart.onDocumentReady(function () {
+    // create data set on our data
+    var dataSet = anychart.data.set(getData());
+
+    // map data for the first series, take x from the zero column and value from the first column of data set
+    var seriesData_1 = dataSet.mapAs({'x': 0, 'value': 1});
+
+    // map data for the second series, take x from the zero column and value from the second column of data set
+    var seriesData_2 = dataSet.mapAs({'x': 0, 'value': 2});
+
+    // map data for the third series, take x from the zero column and value from the third column of data set
+    var seriesData_3 = dataSet.mapAs({'x': 0, 'value': 3});
+
+    var seriesData_4 = dataSet.mapAs({'x': 0, 'value': 4});
+
+    // create line chart
+    var chart = anychart.line();
+
+    // turn on chart animation
+    chart.animation(true);
+
+    // set chart padding
+    chart.padding([10, 20, 5, 20]);
+
+    // turn on the crosshair
+    chart.crosshair()
+            .enabled(true)
+            .yLabel(false)
+            .yStroke(null);
+
+    // set tooltip mode to point
+    chart.tooltip().positionMode('point');
+
+    // set chart title text settings
+    chart.title('Trafikstatistik');
+
+    // set yAxis title
+    chart.yAxis().title('Trafikm&aelig;ngde');
+    chart.xAxis().labels().padding(5);
+
+    // create first series with mapped data
+    var series_1 = chart.line(seriesData_1);
+    series_1.name('Biler');
+    series_1.hovered().markers()
+            .enabled(true)
+            .type('circle')
+            .size(4);
+    series_1.tooltip()
+            .position('right')
+            .anchor('left-center')
+            .offsetX(5)
+            .offsetY(5);
+
+    // create second series with mapped data
+    var series_2 = chart.line(seriesData_2);
+    series_2.name('Lastbiler');
+    series_2.hovered().markers()
+            .enabled(true)
+            .type('circle')
+            .size(4);
+    series_2.tooltip()
+            .position('right')
+            .anchor('left-center')
+            .offsetX(5)
+            .offsetY(5);
+
+    // create third series with mapped data
+    var series_3 = chart.line(seriesData_3);
+    series_3.name('Cykler');
+    series_3.hovered().markers()
+            .enabled(true)
+            .type('circle')
+            .size(4);
+    series_3.tooltip()
+            .position('right')
+            .anchor('left-center')
+            .offsetX(5)
+            .offsetY(5);
+
+            // Og nummer fire
+            var series_4 = chart.line(seriesData_4);
+            series_4.name('El-biler');
+            series_4.hovered().markers()
+                    .enabled(true)
+                    .type('circle')
+                    .size(4);
+            series_4.tooltip()
+                    .position('right')
+                    .anchor('left-center')
+                    .offsetX(5)
+                    .offsetY(5);
+
+    // turn the legend on
+    chart.legend()
+            .enabled(true)
+            .fontSize(13)
+            .padding([0, 0, 10, 0]);
+
+    // set container id for the chart
+    chart.container('container');
+    // initiate chart drawing
+    chart.draw();
+});
+
+function getData() {
+    return [
+        ['2020', 2798, 1256, 3025,1063],
+        ['2019', 2659, 1458, 3895, 1059],
+        ['2018', 2587, 1589,3658, 1025],
+    ]
+}
+&lt;/script&gt;</code></pre>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
   </div>
-</div>
-<br />
-<div class="row">
-  <div class="col-md">
-    <h2>Opgave 7</h2><br />
-    <p class="text-monospace alert alert-warning">Opret et "Dynamisk" diagram med AnyChart</p><br />
-    <p>Løsning:</p><br />
-  </div>
-</div>
-
-
-
-</div>
   <!-- Sidste div hører til main container -->
 </body>
 

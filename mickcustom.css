@@ -18,3 +18,7 @@ a{
   color: rgb(255, 0, 0);
   font-style: italic;
 }
+
+#tableEx{
+  width: 20%;
+}
