@@ -56,7 +56,7 @@
             NAVBAR SLUTTER
 #########################################-->
 
-  <div class="container">
+  <div class="container main_container">
 
     <div class="jumbotron jumboanypage">
       <h1 class="display-3">HTML & CSS</h1>
@@ -66,14 +66,14 @@
   #########################################-->
     <div class="row">
       <div class="col-md">
-        <h5>Basal HTML, CSS og lidt bootstrap. Altsammen i en herlig pærevending på en tomcat server i skyen.</h5><br />
+        <h4>Basal HTML, CSS og lidt bootstrap. <br />
+          <h6 class="font-italic">Altsammen i en herlig pærevending på en tomcat server i skyen.</h6></h4><br />
       </div>
     </div>
 
     <div class="row">
       <div class="col-md">
-
-        <p>Ja, der er kun efterspurgt løsninger på opgave 3, 5 og 6...</p><br />
+        <p>Herunder findes løsninger for opgave 3, 5, 6 og 7 samt løsninger på hhv. "Cupcake side", "Personlig" side og "Kontakt" side</p><br />
       </div>
 
     </div>
@@ -82,340 +82,368 @@
         <h2>Opgave 3</h2><br />
         <p class="text-monospace alert alert-warning">Opret en side i HTML og forskøn den med en ekstern .css fil.</p><br />
         <p>Jeg skulle mene, at den er klaret på siden her, men for en sikkerheds skyld kommer koden her (Som den ser ud på denne side):</p><br />
-      </div>
-    </div>
+        <a class="btn btn-primary" data-toggle="collapse" href="#csseksternkode" role="button" aria-expanded="false" aria-controls="csseksternkode">
+        Vis/Skjul koden
+      </a><br />
+        <div class="collapse" id="csseksternkode">
+          <div class="card card-body">
+            <div class="row">
+              <div class="col-md">
+                <pre><code class="html">&lt;!DOCTYPE html&gt;
+        &lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+          &lt;head&gt;
+            &lt;meta charset=&quot;utf-8&quot;&gt;
+            &lt;title&gt;&lt;/title&gt;
+            &lt;meta charset=&quot;utf-8&quot;&gt;
+            &lt;title&gt;Mick Larsen DAT2SEM2020&lt;/title&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;mickcustom.css&quot;&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;highlight/styles/atom-one-dark.css&quot;&gt;
+            &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+            &lt;script src=&quot;highlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
+            &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
 
-    <div class="row">
-      <div class="col-md">
-        <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
-  &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;&lt;/title&gt;
-    &lt;meta charset=&quot;utf-8&quot;&gt;
-    &lt;title&gt;Mick Larsen DAT2SEM2020&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;mickcustom.css&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;highlight/styles/atom-one-dark.css&quot;&gt;
-    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;highlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+        </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-      </div>
-    </div>
 
-    <br />
-    <div class="row">
-      <div class="col-md">
-        <h2>Opgave 5</h2><br />
-        <p class="text-monospace alert alert-warning">Formatér første linke i en tekst, så den er responsiv (Følger browserens størrelse)</p><br />
-        <p>Lad os starte med løsningen:</p><br />
-        <p id="firstlineformat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend purus vitae imperdiet faucibus. Curabitur molestie leo in ultricies ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
-          nec luctus enim. Cras non purus elit. Duis ac finibus ex, sed lobortis ex. Donec rutrum mauris orci. Vestibulum in nunc a dui dictum efficitur eu et eros. Suspendisse at enim eget ex euismod vulputate a ac justo. Pellentesque tortor tortor,
-          porta ut vulputate sed, bibendum eget libero. Vestibulum elementum mi mollis, fringilla magna sit amet, vehicula sapien. Ut sed velit ante. Integer id quam molestie, euismod augue vitae, mattis nisl. Curabitur consequat, lectus sollicitudin
-          suscipit congue, velit ipsum tristique nisl, maximus euismod ante arcu quis quam. Nulla tincidunt turpis mi, id mattis turpis interdum vitae. Mauris venenatis libero non leo lobortis, vitae feugiat purus bibendum. Curabitur in volutpat purus.
-          Integer commodo commodo mi vitae commodo. Praesent venenatis felis nunc, eget pharetra ante placerat vel. Vivamus nibh odio, malesuada et enim in, lacinia efficitur nunc.</p>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md">
-        <h6>Det løses ved, at give tekstens paragraf et unikt #id som skal targetes med css:</h6>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md">
-        <pre><code class="html">#firstlineformat::first-line{
-  color: rgb(255, 0, 0);
-  font-style: italic;
-}
 
-&lt;p id=&quot;firstlineformat&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend purus vitae imperdiet faucibus. Curabitur molestie leo in ultricies ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque nec luctus enim. Cras non purus elit. Duis ac finibus ex, sed lobortis ex. Donec rutrum mauris orci. Vestibulum in nunc a dui dictum efficitur eu et eros. Suspendisse at enim eget ex euismod vulputate a ac justo.
-Pellentesque tortor tortor, porta ut vulputate sed, bibendum eget libero. Vestibulum elementum mi mollis, fringilla magna sit amet, vehicula sapien. Ut sed velit ante. Integer id quam molestie, euismod augue vitae, mattis nisl. Curabitur consequat, lectus sollicitudin suscipit congue, velit ipsum tristique nisl, maximus euismod ante arcu quis quam. Nulla tincidunt turpis mi, id mattis turpis interdum vitae. Mauris venenatis libero non leo lobortis, vitae feugiat purus bibendum. Curabitur in volutpat purus. Integer commodo commodo mi vitae commodo. Praesent venenatis felis nunc, eget pharetra ante placerat vel. Vivamus nibh odio, malesuada et enim in, lacinia efficitur nunc.&lt;/p&gt;</code>
-</pre>
-      </div>
-    </div>
-    <br />
-
-    <div class="row">
-      <div class="col-md">
-        <h2>Opgave 6</h2><br />
-        <p class="text-monospace alert alert-warning">Få en pære til at tænde/slukke med javascript</p><br />
-        <p>Lad os, endnu engang, starte med løsningen:</p><br />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md"></div>
-      <div class="col-md">
-        <img id="myimage" src="img/pic_bulboff.gif" />
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md"></div>
-      <div class="col-md">
-        <button type="button" onclick="light(1)" class="btn btn-success">Tænd</button>
-        <button type="button" onclick="light(0)" class="btn btn-dark">Sluk</button>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md">
-        <h6>Og kildekoden</h6><br />
-        <p>Bemærk at javascript er lagt i en ekstern fil, hvorfor stien skal rettes til mappestrukturen på serveren</p><br />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md">
-        <h6>Javascript i "lightbulb.js" i en fil</h6>
-        <pre>
-  <code class="javascript">function light(sw){
-    var pic;
-    if(sw == 0){
-      pic = "img/pic_bulboff.gif"
-    } else{
-      pic = "img/pic_bulbon.gif"
+        <br />
+        <div class="row">
+          <div class="col-md">
+            <h2>Opgave 5</h2><br />
+            <p class="text-monospace alert alert-warning">Formatér første linke i en tekst, så den er responsiv (Følger browserens størrelse)</p><br />
+            <p>Lad os starte med løsningen:</p><br />
+            <p id="firstlineformat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend purus vitae imperdiet faucibus. Curabitur molestie leo in ultricies ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque
+              nec luctus enim. Cras non purus elit. Duis ac finibus ex, sed lobortis ex. Donec rutrum mauris orci. Vestibulum in nunc a dui dictum efficitur eu et eros. Suspendisse at enim eget ex euismod vulputate a ac justo. Pellentesque tortor tortor,
+              porta ut vulputate sed, bibendum eget libero. Vestibulum elementum mi mollis, fringilla magna sit amet, vehicula sapien. Ut sed velit ante. Integer id quam molestie, euismod augue vitae, mattis nisl. Curabitur consequat, lectus sollicitudin
+              suscipit congue, velit ipsum tristique nisl, maximus euismod ante arcu quis quam. Nulla tincidunt turpis mi, id mattis turpis interdum vitae. Mauris venenatis libero non leo lobortis, vitae feugiat purus bibendum. Curabitur in volutpat purus.
+              Integer commodo commodo mi vitae commodo. Praesent venenatis felis nunc, eget pharetra ante placerat vel. Vivamus nibh odio, malesuada et enim in, lacinia efficitur nunc.</p>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md">
+            <h6>Det løses ved, at give tekstens paragraf et unikt #id som skal targetes med css:</h6><br />
+            <a class="btn btn-primary" data-toggle="collapse" href="#csskode" role="button" aria-expanded="false" aria-controls="csskode">
+          Vis/Skjul koden
+          </a>
+            <div class="collapse" id="csskode">
+              <div class="card card-body">
+                <div class="col-md">
+                  <pre><code class="html">#firstlineformat::first-line{
+      color: rgb(255, 0, 0);
+      font-style: italic;
     }
-    document.getElementById("myimage").src=pic;
-  }</code></pre>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md">
-        <h6>HTML koden (Med bootstrap. Det væsentlige er mine &lt;button&gt; tags)</h6>
-        <pre>
-  <code class="html">&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;col-md&quot;&gt;
-      &lt;img id=&quot;myimage&quot; src=&quot;img/pic_bulboff.gif&quot; /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;br /&gt;
-&lt;div class=&quot;row&quot;&gt;
-  &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;col-md&quot;&gt;
-  &lt;button type=&quot;button&quot; onclick=&quot;light(1)&quot; class=&quot;btn btn-success&quot;&gt;T&aelig;nd&lt;/button&gt;
-  &lt;button type=&quot;button&quot; onclick=&quot;light(0)&quot; class=&quot;btn btn-dark&quot;&gt;Sluk&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md">
-        <h6>For at hente javascript ind eksternt indsættes nedestående i &lt;head&gt; sektionen, øverst i HTML filen</h6>
-        <pre>
-  <code class="html">&lt;head&gt;
-    &lt;script src=&quot;lightbulb.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;</code></pre>
-      </div>
-    </div>
-    <br />
-    <div class="row">
-      <div class="col-md">
-        <h2>Opgave 7</h2><br />
-        <p class="text-monospace alert alert-warning">Opret et "Dynamisk" diagram med AnyChart</p><br />
-        <h6>Løsning:</h6><br />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md"></div>
-      <div class="col-md">
-        <table class="table" id="tableEx">
-          <thead>
-            <tr>
-              <th scope="col">Produkt</th>
-              <th scope="col">2018</th>
-              <th scope="col">2019</th>
-              <th scope="col">2020</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Biler</th>
-              <td>2587</td>
-              <td>2587</td>
-              <td>2798</td>
-            </tr>
-            <tr>
-              <th>Lastbiler</th>
-              <td>1589</td>
-              <td>1458</td>
-              <td>1256</td>
-            </tr>
-            <tr>
-              <th>Cykler</th>
-              <td>3658</td>
-              <td>3895</td>
-              <td>3025</td>
-            </tr>
-            <tr>
-              <th>El-biler</th>
-              <td>1025</td>
-              <td>1059</td>
-              <td>1063</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="col-md"></div>
-    </div>
-    <br />
-    <div class="row">
 
-      <div class="col-md">
-        <div id="container" style="width: 100%; height: 400px;"></div>
-      </div>
+    &lt;p id=&quot;firstlineformat&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend purus vitae imperdiet faucibus. Curabitur molestie leo in ultricies ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque nec luctus enim. Cras non purus elit. Duis ac finibus ex, sed lobortis ex. Donec rutrum mauris orci. Vestibulum in nunc a dui dictum efficitur eu et eros. Suspendisse at enim eget ex euismod vulputate a ac justo.
+    Pellentesque tortor tortor, porta ut vulputate sed, bibendum eget libero. Vestibulum elementum mi mollis, fringilla magna sit amet, vehicula sapien. Ut sed velit ante. Integer id quam molestie, euismod augue vitae, mattis nisl. Curabitur consequat, lectus sollicitudin suscipit congue, velit ipsum tristique nisl, maximus euismod ante arcu quis quam. Nulla tincidunt turpis mi, id mattis turpis interdum vitae. Mauris venenatis libero non leo lobortis, vitae feugiat purus bibendum. Curabitur in volutpat purus. Integer commodo commodo mi vitae commodo. Praesent venenatis felis nunc, eget pharetra ante placerat vel. Vivamus nibh odio, malesuada et enim in, lacinia efficitur nunc.&lt;/p&gt;</code>
+    </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md">
+            <h2>Opgave 6</h2><br />
+            <p class="text-monospace alert alert-warning">Få en pære til at tænde/slukke med javascript</p><br />
+            <p>Lad os, endnu engang, starte med løsningen:</p><br />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md"></div>
+          <div class="col-md">
+            <img id="myimage" src="img/pic_bulboff.gif" />
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md"></div>
+          <div class="col-md">
+            <button type="button" onclick="light(1)" class="btn btn-success">Tænd</button>
+            <button type="button" onclick="light(0)" class="btn btn-dark">Sluk</button>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md">
+            <a class="btn btn-primary" data-toggle="collapse" href="#paerekode" role="button" aria-expanded="false" aria-controls="paerekode">
+      Vis/Skjul koden
+    </a>
+            <div class="collapse" id="paerekode">
+              <div class="card card-body">
+                <div class="row">
+                  <div class="col-md">
+                    <p>Bemærk at javascript er lagt i en ekstern fil, hvorfor stien skal rettes til mappestrukturen på serveren</p><br />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md">
+                    <h6>Javascript i "lightbulb.js" i en fil</h6>
+                    <pre>
+        <code class="javascript">function light(sw){
+        var pic;
+        if(sw == 0){
+          pic = "img/pic_bulboff.gif"
+        } else{
+          pic = "img/pic_bulbon.gif"
+        }
+        document.getElementById("myimage").src=pic;
+        }</code></pre>
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-md">
+                    <h6>HTML koden (Med bootstrap. Det væsentlige er mine &lt;button&gt; tags)</h6>
+                    <pre>
+        <code class="html">&lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;col-md&quot;&gt;
+          &lt;img id=&quot;myimage&quot; src=&quot;img/pic_bulboff.gif&quot; /&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br /&gt;
+        &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;col-md&quot;&gt;
+        &lt;button type=&quot;button&quot; onclick=&quot;light(1)&quot; class=&quot;btn btn-success&quot;&gt;T&aelig;nd&lt;/button&gt;
+        &lt;button type=&quot;button&quot; onclick=&quot;light(0)&quot; class=&quot;btn btn-dark&quot;&gt;Sluk&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;</code></pre>
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-md">
+                    <h6>For at hente javascript ind eksternt indsættes nedestående i &lt;head&gt; sektionen, øverst i HTML filen</h6>
+                    <pre>
+        <code class="html">&lt;head&gt;
+        &lt;script src=&quot;lightbulb.js&quot;&gt;&lt;/script&gt;
+        &lt;/head&gt;</code></pre>
+                  </div>
+                </div>
+                <br />
 
-    </div>
-    <script>
-      anychart.onDocumentReady(function() {
-        // create data set on our data
-        var dataSet = anychart.data.set(getData());
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md">
+            <h2>Opgave 7</h2><br />
+            <p class="text-monospace alert alert-warning">Opret et "Dynamisk" diagram med AnyChart</p><br />
+            <h6>Løsning:</h6><br />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md"></div>
+          <div class="col-md">
+            <table class="table" id="tableEx">
+              <thead>
+                <tr>
+                  <th scope="col">Produkt</th>
+                  <th scope="col">2018</th>
+                  <th scope="col">2019</th>
+                  <th scope="col">2020</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Biler</th>
+                  <td>2587</td>
+                  <td>2587</td>
+                  <td>2798</td>
+                </tr>
+                <tr>
+                  <th>Lastbiler</th>
+                  <td>1589</td>
+                  <td>1458</td>
+                  <td>1256</td>
+                </tr>
+                <tr>
+                  <th>Cykler</th>
+                  <td>3658</td>
+                  <td>3895</td>
+                  <td>3025</td>
+                </tr>
+                <tr>
+                  <th>El-biler</th>
+                  <td>1025</td>
+                  <td>1059</td>
+                  <td>1063</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md"></div>
+        </div>
+        <br />
+        <div class="row">
 
-        // map data for the first series, take x from the zero column and value from the first column of data set
-        var seriesData_1 = dataSet.mapAs({
-          'x': 0,
-          'value': 1
-        });
+          <div class="col-md">
+            <div id="container" style="width: 100%; height: 400px;"></div>
+          </div>
 
-        // map data for the second series, take x from the zero column and value from the second column of data set
-        var seriesData_2 = dataSet.mapAs({
-          'x': 0,
-          'value': 2
-        });
+        </div>
+        <script>
+          anychart.onDocumentReady(function() {
+            // create data set on our data
+            var dataSet = anychart.data.set(getData());
 
-        // map data for the third series, take x from the zero column and value from the third column of data set
-        var seriesData_3 = dataSet.mapAs({
-          'x': 0,
-          'value': 3
-        });
+            // map data for the first series, take x from the zero column and value from the first column of data set
+            var seriesData_1 = dataSet.mapAs({
+              'x': 0,
+              'value': 1
+            });
 
-        var seriesData_4 = dataSet.mapAs({
-          'x': 0,
-          'value': 4
-        });
+            // map data for the second series, take x from the zero column and value from the second column of data set
+            var seriesData_2 = dataSet.mapAs({
+              'x': 0,
+              'value': 2
+            });
 
-        // create line chart
-        var chart = anychart.line();
+            // map data for the third series, take x from the zero column and value from the third column of data set
+            var seriesData_3 = dataSet.mapAs({
+              'x': 0,
+              'value': 3
+            });
 
-        // turn on chart animation
-        chart.animation(true);
+            var seriesData_4 = dataSet.mapAs({
+              'x': 0,
+              'value': 4
+            });
 
-        // set chart padding
-        chart.padding([10, 20, 5, 20]);
+            // create line chart
+            var chart = anychart.line();
 
-        // turn on the crosshair
-        chart.crosshair()
-          .enabled(true)
-          .yLabel(false)
-          .yStroke(null);
+            // turn on chart animation
+            chart.animation(true);
 
-        // set tooltip mode to point
-        chart.tooltip().positionMode('point');
+            // set chart padding
+            chart.padding([10, 20, 5, 20]);
 
-        // set chart title text settings
-        chart.title('Trafikstatistik');
+            // turn on the crosshair
+            chart.crosshair()
+              .enabled(true)
+              .yLabel(false)
+              .yStroke(null);
 
-        // set yAxis title
-        chart.yAxis().title('Trafikmængde');
-        chart.xAxis().labels().padding(5);
+            // set tooltip mode to point
+            chart.tooltip().positionMode('point');
 
-        // create first series with mapped data
-        var series_1 = chart.line(seriesData_1);
-        series_1.name('Biler');
-        series_1.hovered().markers()
-          .enabled(true)
-          .type('circle')
-          .size(4);
-        series_1.tooltip()
-          .position('right')
-          .anchor('left-center')
-          .offsetX(5)
-          .offsetY(5);
+            // set chart title text settings
+            chart.title('Trafikstatistik');
 
-        // create second series with mapped data
-        var series_2 = chart.line(seriesData_2);
-        series_2.name('Lastbiler');
-        series_2.hovered().markers()
-          .enabled(true)
-          .type('circle')
-          .size(4);
-        series_2.tooltip()
-          .position('right')
-          .anchor('left-center')
-          .offsetX(5)
-          .offsetY(5);
+            // set yAxis title
+            chart.yAxis().title('Trafikmængde');
+            chart.xAxis().labels().padding(5);
 
-        // create third series with mapped data
-        var series_3 = chart.line(seriesData_3);
-        series_3.name('Cykler');
-        series_3.hovered().markers()
-          .enabled(true)
-          .type('circle')
-          .size(4);
-        series_3.tooltip()
-          .position('right')
-          .anchor('left-center')
-          .offsetX(5)
-          .offsetY(5);
+            // create first series with mapped data
+            var series_1 = chart.line(seriesData_1);
+            series_1.name('Biler');
+            series_1.hovered().markers()
+              .enabled(true)
+              .type('circle')
+              .size(4);
+            series_1.tooltip()
+              .position('right')
+              .anchor('left-center')
+              .offsetX(5)
+              .offsetY(5);
 
-        // Og nummer fire
-        var series_4 = chart.line(seriesData_4);
-        series_4.name('El-biler');
-        series_4.hovered().markers()
-          .enabled(true)
-          .type('circle')
-          .size(4);
-        series_4.tooltip()
-          .position('right')
-          .anchor('left-center')
-          .offsetX(5)
-          .offsetY(5);
+            // create second series with mapped data
+            var series_2 = chart.line(seriesData_2);
+            series_2.name('Lastbiler');
+            series_2.hovered().markers()
+              .enabled(true)
+              .type('circle')
+              .size(4);
+            series_2.tooltip()
+              .position('right')
+              .anchor('left-center')
+              .offsetX(5)
+              .offsetY(5);
 
-        // turn the legend on
-        chart.legend()
-          .enabled(true)
-          .fontSize(13)
-          .padding([0, 0, 10, 0]);
+            // create third series with mapped data
+            var series_3 = chart.line(seriesData_3);
+            series_3.name('Cykler');
+            series_3.hovered().markers()
+              .enabled(true)
+              .type('circle')
+              .size(4);
+            series_3.tooltip()
+              .position('right')
+              .anchor('left-center')
+              .offsetX(5)
+              .offsetY(5);
 
-        // set container id for the chart
-        chart.container('container');
-        // initiate chart drawing
-        chart.draw();
-      });
+            // Og nummer fire
+            var series_4 = chart.line(seriesData_4);
+            series_4.name('El-biler');
+            series_4.hovered().markers()
+              .enabled(true)
+              .type('circle')
+              .size(4);
+            series_4.tooltip()
+              .position('right')
+              .anchor('left-center')
+              .offsetX(5)
+              .offsetY(5);
 
-      function getData() {
-        return [
-          ['2020', 2798, 1256, 3025, 1063],
-          ['2019', 2659, 1458, 3895, 1059],
-          ['2018', 2587, 1589, 3658, 1025],
-        ]
-      }
-    </script>
+            // turn the legend on
+            chart.legend()
+              .enabled(true)
+              .fontSize(13)
+              .padding([0, 0, 10, 0]);
 
-    <div class="row">
-      <div class="col-md"><br />
-        <h5>How the F did you do that!?</h5><br />
-        <p>Opgaven ligner opgave 6 da det handler om at hive et eksternt .js bibliotek ind fra <a href="https://www.anychart.com/">AnyChart</a><br /> Det fremgår fint af hjemmesiden at man skal signe up (Buuuh!) for at få adgang til filerne. Jeg er typen
-          som helst undgår cdn (online-hostet) da jeg bedst kan lide at have filerne liggenede på min server. Hvis det skulle gå galt hos CDN'en (Not likely) virker min side stadig, da jeg selv hoster hele pivetøjet.
-          <br />
-          <h1 class="display-4">bla bla. what's next?</h1><br /> Ja, så er det bare at læse <a href="https://docs.anychart.com/Quick_Start/Quick_Start">dokumentation</a> som er ligetil. Jeg kan varmt anbefale deres <a href="https://www.anychart.com/products/anychart/gallery/">Chart gallery!</a><br
-          />Koden får du serveret på et salatfad her:</p><br />
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md">
-        <pre><code class="html">&lt;div class=&quot;row&quot;&gt;
+            // set container id for the chart
+            chart.container('container');
+            // initiate chart drawing
+            chart.draw();
+          });
+
+          function getData() {
+            return [
+              ['2020', 2798, 1256, 3025, 1063],
+              ['2019', 2659, 1458, 3895, 1059],
+              ['2018', 2587, 1589, 3658, 1025],
+            ]
+          }
+        </script>
+
+        <div class="row">
+          <div class="col-md"><br />
+            <h5>How the F did you do that!?</h5><br />
+            <p>Opgaven ligner opgave 6 da det handler om at hive et eksternt .js bibliotek ind fra <a href="https://www.anychart.com/">AnyChart</a><br /> Det fremgår fint af hjemmesiden at man skal signe up (Buuuh!) for at få adgang til filerne. Jeg er typen
+              som helst undgår cdn (online-hostet) da jeg bedst kan lide at have filerne liggenede på min server. Hvis det skulle gå galt hos CDN'en (Not likely) virker min side stadig, da jeg selv hoster hele pivetøjet. <br /> Selve tabellen er lavet med <a href="https://getbootstrap.com/docs/4.4/content/tables/">bootstrap</a> ligesom resten af siden.
+              <br />
+              <h1 class="display-4">bla bla. what's next?</h1><br /> Ja, så er det bare at læse <a href="https://docs.anychart.com/Quick_Start/Quick_Start">dokumentation</a> som er ligetil. Jeg kan varmt anbefale deres <a href="https://www.anychart.com/products/anychart/gallery/">Chart gallery!</a><br
+              />Koden får du serveret på et salatfad her:</p><br />
+            <p>
+              <a class="btn btn-primary" data-toggle="collapse" href="#statistikkode" role="button" aria-expanded="false" aria-controls="statistikkode">
+              Vis/Skjul koden
+            </a>
+          </div>
+        </div>
+        <div class="collapse" id="statistikkode">
+          <div class="card card-body">
+
+            <div class="row">
+              <div class="col-md">
+                <pre><code class="html">&lt;div class=&quot;row&quot;&gt;
   &lt;div class=&quot;col-md&quot;&gt;
     &lt;table class=&quot;table&quot; id=&quot;tableEx&quot;&gt;
       &lt;thead&gt;
@@ -573,20 +601,53 @@ function getData() {
     ]
 }
 &lt;/script&gt;</code></pre>
+              </div>
+            </div>
+            <!-- collapse slutter med de næste 2 divs -->
+          </div>
+        </div>
+
+        <br />
+        <div class="row">
+          <div class="col-md">
+            <h2>Opgave "Cupcake"</h2><br />
+            <p class="text-monospace alert alert-warning">Link til en side der senere kan bruges til "Cupcake projektet"</p><br />
+            <p>Voila!</p><br />
+          </div>
+        </div>
+        <div style="height:10em;"></div>
+        <div class="row">
+          <div col="col-md"></div>
+          <div class="col-md text-center">
+            <a class="btn btn-primary" id="megaknap" href="cupcake.html" role="button">KÆMPE LINK</a>
+          </div>
+          <div col="col-md"></div>
+        </div>
+        <div style="height:10em;"></div>
+        <div class="row">
+          <div class="col-md">
+            <h2>Opgave "Personlig side"</h2><br />
+            <p class="text-monospace alert alert-warning">Lav en personlig side</p>
+            <a href="om.html">Consider it done!</a>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md">
+            <h2>Opgave "Kontakt side"</h2><br />
+            <p class="text-monospace alert alert-warning">Lav en kontaktside</p>
+            <a href="kontakt.html">Way ahead of you!</a>
+          </div>
+        </div>
+        <br />
+
+
+
+
+
+
       </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-  </div>
-  <!-- Sidste div hører til main container -->
+      <!-- Sidste div hører til main container -->
 </body>
 
 </html>

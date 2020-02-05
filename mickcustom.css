@@ -22,3 +22,15 @@ a{
 #tableEx{
   width: 20%;
 }
+
+#megaknap{
+  width: 50%;
+  font-size: 5em;
+}
+
+.main_container{
+  margin-top: 2em;
+  box-shadow: 1px 1px 20px #c3c3c3, -1px -1px 20px #c3c3c3;
+  border-radius: 2px;
+
+}
