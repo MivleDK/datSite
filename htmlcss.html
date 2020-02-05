@@ -10,8 +10,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
-  <script src="hightlight/highlight.pack.js"></script>
+  <script src="highlight/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
+
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -54,40 +56,56 @@
   <div class="container">
 
     <div class="jumbotron jumboanypage">
-      <h1 class="display-3">Ugentlige opgaver</h1>
+      <h1 class="display-3">HTML & CSS</h1>
     </div>
     <!-- ###################################
               CONTENT BEGYNDER
   #########################################-->
-<div class="row">
-  <div class="col-md">
-<h5>Herunder vil de ugentlige opgaver blive lagt op, i det omfang det kan lade sig gøre.</h5><br />
-  </div>
-
-</div>
+    <div class="row">
+      <div class="col-md">
+        <h5>Basal HTML, CSS og lidt bootstrap. Altsammen i en herlig pærevending på en tomcat server i skyen.</h5><br />
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-md">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Introduktion - Linux/Digital Ocean/MySQL/Tomcat</li>
-          <li class="list-group-item"><a href="htmlcss.html">HTML, CSS</a></li>
-          <li class="list-group-item">HTTP protokollen og Netværk</li>
-          <li class="list-group-item">Tråde og performance</li>
-          <li class="list-group-item">Database</li>
-          <li class="list-group-item">Webprogrammering backend</li>
-          <li class="list-group-item">Webprogrammering frontend</li>
-          <li class="list-group-item">UML, Version styring - GIT, Virksomhed, Rapport</li>
-          <li class="list-group-item">Webstack</li>
-          <li class="list-group-item">Prøve eksamen</li>
-          <li class="list-group-item">Virksomhed, Projekt</li>
-          <li class="list-group-item">Projekt, Test og kvalitet</li>
-          <li class="list-group-item">Projekt, Fejlhåndtering</li>
-          <li class="list-group-item">Projekt</li>
-        </ul>
+
+      <p>Ja, der er kun efterspurgt løsninger på opgave 3, 5 og 6...</p><br />
       </div>
-      <div class="col-md"></div>
+
     </div>
-</div>
+    <div class="row">
+      <div class="col-md">
+      <h2>Opgave 3</h2><br />
+      <p class="text-monospace alert alert-warning">Opret en side i HTML og forskøn den med en ekstern .css fil.</p><br />
+      <p>Jeg skulle mene, at den er klaret på siden her, men for en sikkerheds skyld kommer koden her (Som den ser ud på denne side):</p><br />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md">
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Min titel&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;mickcustom.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap/css/bootstrap.min.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;highlight/styles/atom-one-dark.css&quot;&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bootstrap/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;hightlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+    </div>
+
+  </div><!-- Sidste div hører til main container -->
 </body>
 
 </html>
