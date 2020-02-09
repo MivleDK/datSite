@@ -37,5 +37,35 @@ a{
 .vertical-align{
 margin-top: auto;
 margin-bottom: auto;
+}
 
+.t--light .jumboanypage{
+  background-image: linear-gradient(90deg, #fff, #f1f1f1 , #fff);
+}
+
+.t--dark{
+  background-color: #303030;
+}
+
+.t--dark .jumboanypage{
+background-image: linear-gradient(90deg, #303030, #363636 , #303030);
+}
+
+.t--dark #fp_jumbotron{
+  background-image: linear-gradient(90deg, #303030, #363636 , #303030);
+}
+
+.t--light .monospace{
+  color: black;
+}
+.t--dark{
+  color:white;
+}
+
+.t--dark .list-group-item{
+  background-color: #363636;
+}
+
+.t--dark a{
+  color: #ff8a1f;
 }
