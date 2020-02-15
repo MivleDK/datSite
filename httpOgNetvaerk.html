@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mick Larsen DAT2SEM2020</title>
+  <link rel="stylesheet" href="mickcustom.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="highlight/styles/monokai.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="highlight/highlight.pack.js"></script>
+  <script src="lightbulb.js"></script>
+  <script src="anychart-installation-package-8.7.1/js/anychart-base.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Mick Larsen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Forside</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Opgaver
+            </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item active" href="ugentlige_opgaver.html">Ugentlige opgaver</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="projekter.html">Projekter</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="noter.html">Noter </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="om.html">Om </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kontakt.html">Kontakt </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- ###################################
+            NAVBAR SLUTTER
+#########################################-->
+
+  <div class="container main_container">
+
+    <div class="jumbotron jumboanypage">
+      <h1 class="display-3">HTTP Protokollen og netværk</h1>
+    </div>
+    <!-- ###################################
+              CONTENT BEGYNDER
+  #########################################-->
+    <div class="row">
+      <div class="col-md">
+        <h4>Opgaveløsning på en server i Java</h4><br />
+        <br />
+        <p>Koden til opgaverne kan hentes på <a href="https://github.com/MivleDK/Modul1NetworkHTTP.git">Github her</a></p>
+      </div>
+    </div>
+<div class="vert-space"></div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h2>Tirsdag opgave 1 <span class="badge badge-success">Grøn</span></h2><br />
+        <p class="text-monospace alert alert-info">I skal kunne vise forskellen på hvilken data der sendes til en web server fra henholdsvis en chrome og en firefox browser (prøv gerne med andre browsere også).</p><br />
+        <p>Afhængigt af hvilken browser man tilgår en side på, sendes der forskellig information med fra headeren i HTTP protokollen. Informationerne kan findes i de fleste browsere ved at kigge i browserens developer tools (Typisk F12)</p><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <p class="text-center">Her i google chrome (Klik for stor):</p>
+        <a href="img/chromeheader.png"><img src="img/chromeheader.png" style="width: 80%" class="img-fluid rounded mx-auto d-block drop-that-shadow" alt="responsive image"></a>
+      </div>
+      <div class="col-md">
+        <p class="text-center">Her i Microsoft Edge (Klik for stor):</p>
+        <a href="img/edgeheader.png"><img src="img/edgeheader.png" style="width: 80%" class="img-fluid rounded mx-auto d-block drop-that-shadow" alt="responsive image"></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <br />
+        <p>Vi kan altså se, at headeren bl.a. sender informationer om, hvilken browser klienten anvender</p>
+      </div>
+    </div>
+
+<hr class="vert-space" />
+
+    <div class="row">
+      <div class="col-md">
+        <h2>Tirsdag opgave 2 <span class="badge badge-warning">Gul</span></h2><br />
+        <p class="text-monospace alert alert-info">Hvis man starter picoserver02 to gange (uden at lukke det første ned) får man en fejl. Hvad betyder den fejl og hvorfor får man den.</p><br />
+        <p>Lad os prøve at starte picoserver02 to gange og se hvad der sker:</p><br />
+        <img src="img/pico2fejl.png" class="img-fluid rounded mx-auto d-block drop-that-shadow" />
+        <br />
+        <p>Vi får en BindException med beskeden "Address already in use: JVM_Bind". <br />
+          Vi har prøvet at oprette den samme forbindelse, med TCP, på den samme port. Det kan ikke lade sig gøre da den første socket-connection allerede optager denne forbindelse.
+          Vi kan altså ikke oprette forbindelse på samme port to gange med TCP protokollen.
+        </p>
+      </div>
+    </div>
+
+<hr class="vert-space" />
+
+<br />
+    <div class="row">
+      <div class="col-md">
+        <h2>Tirsdag opgave 3 <span class="badge badge-danger">Rød</span></h2><br />
+        <p class="text-monospace alert alert-info">Prøv vha. exception handling at lave picoserver2 om sådan at den automatisk finder en server socket der ikke er i brug, sådan at I kan have mere end en server kørende på samme tid i IntelliJ.</p><br />
+        <p>Det var ikke nemt at løse opgaven med exceptions uden at begynde at håndtere multi-threading (Som vi først skal have i næste uge). Istedet fandt en klassekammerat ud af, at ServerSocket-klassen kan håndtere problemet. Hvis man undlader at specificere
+          en port (Fx. 8080) men angiver '0' finder klassen automatisk, en ledig port.<br /> Her finder du den oprindelige kode:
+        </p>
+        <pre>
+  <code class="java drop-that-shadow">    private static void picoServer02() throws Exception {
+        final ServerSocket server = new ServerSocket( 8080 );
+        System.out.println( &quot;Listening for connection on port 8080 ....&quot; );
+        while ( true ) { // keep listening (as is normal for a server)
+            try ( Socket socket = server.accept() ) {
+                System.out.println( &quot;-----------------&quot; );
+                System.out.println( &quot;Client: &quot; + socket.getInetAddress().getHostName() );
+                System.out.println( &quot;-----------------&quot; );
+                BufferedReader br = new BufferedReader( new InputStreamReader( socket.getInputStream() ) );
+                String line;
+                while ( !( ( line = br.readLine() ).isEmpty() ) ) {
+                    System.out.println( line );
+                }
+                System.out.println( &quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot; );
+                Date today = new Date();
+                String httpResponse = &quot;HTTP/1.1 200 OK\r\n\r\n&quot; + today;
+                socket.getOutputStream().write( httpResponse.getBytes( &quot;UTF-8&quot; ) );
+                System.out.println( &quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot; );
+            }
+        }
+    }</code></pre>
+        <br />
+        <p>I Nedestående er porten ændret til '0' og beskeden så den reflekterer den port der er åbnet:<br />Presto - it works!</p>
+        <pre>
+  <code class="java drop-that-shadow">    private static void picoServer02() throws Exception {
+
+            final ServerSocket server = new ServerSocket(0);
+            System.out.println(&quot;Listening for connection on port &quot; + server.getLocalPort() + &quot; ...&quot;);
+            while (true) { // keep listening (as is normal for a server)
+                try (Socket socket = server.accept()) {
+                    System.out.println(&quot;-----------------&quot;);
+                    System.out.println(&quot;Client: &quot; + socket.getInetAddress().getHostName());
+                    System.out.println(&quot;-----------------&quot;);
+                    BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    String line;
+                    while (!((line = br.readLine()).isEmpty())) {
+                        System.out.println(line);
+                    }
+                    System.out.println( &quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&quot; );
+                    Date today = new Date();
+                    String httpResponse = &quot;HTTP/1.1 200 OK\r\n\r\n&quot; + today;
+                    socket.getOutputStream().write( httpResponse.getBytes( &quot;UTF-8&quot; ) );
+                    System.out.println( &quot;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&quot; );
+                }
+            }
+        }</code></pre>
+      </div>
+    </div>
+
+<hr class="vert-space" />
+
+    <div class="row">
+      <div class="col-md">
+        <h2>Tirsdag opgave 4 <span class="badge badge-success">Grøn</span></h2><br />
+        <p class="text-monospace alert alert-info">Find en person i gruppen der kan lave et wifi-hot-spot med sin telefon, og kopl jeres laptop på denne telefon. Find IP addressen på laptoppen (hvis I ikke ved hvordan man finder IP addressen på jeres laptop, så er det altså det der er google opgaven).
+          Det er vigtigt at alle i gruppen kan finde deres IP addresse, uanset om det er Windows, Mac, Linux eller noget andet.</p>
+
+<p class="font-weight-bold"><span class="badge badge-success">Grøn</span> Demonstrer at I kan kople på picoserver2 via jeres telefon.</p>
+          <p>Kræver, at én laver et hotspot og at computer og alle telefoner forbinder til dette. <br />
+            Herfra kan man fra PC'en via terminalen finde ud af, hvilke IP-adresser der er forbundet på samme netværk.<br /> Herfra gælder det blot om at koble på den lokale
+            IP-adresse som hoster java-koden og angive port nummer - fx. 192.168.222.1:8080</p><br />
+<p class="font-weight-bold"><span class="badge badge-warning">Gul</span> Kopl alle gruppens laptops på samme telefon, og demonstrer hvordan I fra jeres browser kan kople jer på forskellige servere på andres laptops.</p>
+          <p>Samme som ovenfor - IP-adressen skal blot ændres til IP-adressen hvor serveren hostes</p>
+          <br />
+<p class="font-weight-bold"><span class="badge badge-danger">Rød</span> Behøver alle serverne at bruge samme port nummer? Demonstrer hvordan man fra en laptop kan have mere end en server kørende, og tilgå dem fra en anden laptop.</p>
+          <p>Er løst i opgave 3 (rød) ovenfor. Med justeringerne i denne opgave kan vedkommende som afvikler programmet blot starte flere servere. Porten assignes automatisk og det er blot at angive denne efter IP-adressen.</p>
+      </div>
+    </div>
+
+<hr class="vert-space" />
+
+    <div class="row">
+      <div class="col-md">
+        <h2>Tirsdag opgave 5 <span class="badge badge-success">Grøn</span></h2><br />
+        <p class="text-monospace alert alert-info">(Grøn) Er det java eller operativ systemet der har ansvaret for porte, altså er det java eller operativ systemet der brokker sig hvis man prøver at åbne den samme port to gange? Og hvorfor er det et problem med to porte med samme nummer?</p>
+        <br />
+        <p>Når man forbinder med TCP og sockets opretter man en fast forbindelse som skal afbrydes. Dette til forskel for UDP som sender datapakker imod modtager, men ikke opretter en fast forbindelse.<br />
+          <br />Man kan visualisere for sig, at der oprettes et server socket og client socket (stik på dansk) som forbindes og hermed er klar til dataoverførsel.<br />
+          <br />Hvis man forsøger at forbinde endnu et socket til et eksisterende vil operativsystemet fortælle Java, at det ikke kan lade sig gøre. Java brokker sig herefter til os og smider en exception</p>
+        <br />
+      </div>
+    </div>
+
+<hr class="vert-space" />
+
+    <div class="row">
+      <div class="col-md">
+        <h2>Tirsdag opgave 6 <span class="badge badge-danger">Rød</span></h2><br />
+        <p class="text-monospace alert alert-info">Som en del af den udleverede kode er der en klasse der hedder HttpRequest. Redegør for denne klasse, specielt skal I kunne forklare:</p>
+        <br />
+<p class="font-weight-bold">Hvad er forskellen på parametre og headers?</p>
+          <p>Lad os bruge følgende adresse som eksempel: </p>
+          <p class="text-monospace bd-highlight">www.minside.dk/hokus/pokus.html?moria=mellon</p>
+          <p>Headeren er en række information som browseren sender til serveren - Se billederne længere oppe.
+            <br />Parametrene kan ses i den URL (sti eller path). I vores tilfælde er stien "/hokus/pokus.html" og vores parametre er "moria=mellon". Læg mærke til at path og parametre er adskilt af '?'
+            <br />I en GET request kan parametre bl.a. anvendes for at fortælle serveren at vi vil søge efter noget. Laver du en google-søgning på 'fisk' ser din URL sikkert ca. sådan ud: "google.com/search?q=fisk..."</p>
+            <br />
+<p class="font-weight-bold">Hvad gør de første 7 linjer i konstruktøren?</p>
+          <p>Lad os se på koden:</p>
+          <pre>
+            <code class="java">  HttpRequest(InputStream in) throws IOException {
+    String[] parts = readLine(in).split(&quot; &quot;);
+    if (parts.length != 3) throw new IOException(&quot;Bad request&quot;);
+    method = parts[0].toLowerCase();
+    String[] resourceParts = parts[1].split(&quot;\\?&quot;, 2);
+    path = resourceParts[0];
+    if (resourceParts.length == 2) setQuery(resourceParts[1]);
+    protocol = parts[2];</code>
+          </pre>
+          <p>Når blot man ved, at det er første linje i headeren der bliver kørt igennem funktionen, er det lettere at gennemskue.<br />
+            <p>Lad os antage at headeren ser sådan ud:</p>
+            <p class="text-monospace text-white bg-dark">GET /hokus/pokus.html?moria=mellon HTTP/1.1</p>
+<ol>
+            <li> linje i metoden er konstruktørens signatur - her modtages browserens header via inputstream</p>
+            <li>linje i metoden læser headeren og indsætter hvert string, separeret efter blank-space, i arrayet "parts".<br /> Der står altså nu hhv: <br />[0] = GET <br />[1] = /hokus/pokus.html?moria=mellon <br />[2] = HTTP/1.1</p>
+            <li>linje tjekker at part's længde er præcis 3 - hvis ikke smides en exception</p>
+            <li>linje sætter en "global" string variable til 'get'</p>
+            <li>linje laver et nyt array og tager plads 1 fra parts og splitter efter '?'.<br /> resourceParts ser nu således ud:<br /> [0] = /hokus/pokus.html<br /> [1] = moria=mellon</p>
+            <li>linje sætter en "global" string variabel til resourceParts[0].</p>
+            <li>linje tjekker, at resourceParts består af to elementer og kalder herefter metoden setQuery med resourceParts[1] som parameter.</p>
+            <li>linje sætter en "global" string variable til parts[2] - altså "HTTP/1.1"</p><br />
+</ol>
+<p class="font-weight-bold">I konstruktøren er der en linje der hedder:</p>
+              <p class="text-monospace text-center text-white bg-dark">if ("application/x-www-form-urlencoded".equals(getContentType())) {</p>
+<p class="font-weight-bold">Forklar hvorfor denne er smartere end:</p>
+              <p class="text-monospace text-center text-white bg-dark">if ( getContentType().equals("application/x-www-form-urlencoded" ) ){</p>
+              <br />
+              <p>Den første metode sammenligner en "hard-coded" String med resultatet af metoden getContentType().<br />
+                Hvis getContentType() giver et forkert output tilbage bliver resultatet "false"<br />
+                I den anden metode risikerer man at sammenligne 'null' med en string hvilket vil medføre en fejl der stopper programmet som evt. skal håndteres.
+                <br />Sidstnævnte er mere besværligt da vi egentlig blot er interesserede i, om resultatet er true/false.</p>
+            </li>
+        </ul>
+        <br />
+      </div>
+    </div>
+
+<hr class="vert-space" />
+
+    <div class="row">
+      <div class="col-md">
+        <h2>Fredag opgave 1 <span class="badge badge-success">Grøn</span></h2><br />
+        <p class="text-monospace alert alert-info">I den løsning der hedder picoserver06 bruges der en konstant der hedder RES. Denne opgave går ud på at få denne fil til at være i resources kataloget.</p><br />
+<p class="font-weight-bold">Lav en fil result.tmpl(tmpl for “template”) med samme indhold som RES variablen sidst i ServerMain.java. Denne fil skal være i resources.</p>
+          <p>asd</p>
+          <br />
+<p class="font-weight-bold">I stedet for at bruge RES variablen skal man i addOurNumbers metoden læse indholdet fra result.tmpl filen (husk der er en metode i ServerMain.java der kan læse en fil fra resources).</p>
+          <p>asd</p>
+          <br />
+        <p>Comming soon</p>
+      </div>
+  </div>
+
+<hr class="vert-space" />
+
+  </div>
+  <!-- Sidste div hører til main container -->
+</body>
+
+</html>

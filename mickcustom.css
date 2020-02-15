@@ -34,10 +34,23 @@ a{
   border-radius: 2px;
 }
 
+.drop-that-shadow{
+  box-shadow: -5px 5px 10px #c3c3c3;
+}
+
 .vertical-align{
 margin-top: auto;
 margin-bottom: auto;
 }
+
+.vert-space{
+  margin-top: 3em !important;
+  margin-bottom: 3em !important;
+}
+
+/* #####################################
+      DARK MODE CSS
+  #####################################*/
 
 .t--light .jumboanypage{
   background-image: linear-gradient(90deg, #fff, #f1f1f1 , #fff);
@@ -73,5 +86,4 @@ background-image: linear-gradient(90deg, #303030, #363636 , #303030);
 .t--dark .navbar-dark{
   background-color: #303030 !important;
   box-shadow: 1px 1px 20px #8a8a8a, -1px -1px 20px #8a8a8a;
-
 }
