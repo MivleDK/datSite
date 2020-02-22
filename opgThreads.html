@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mick Larsen DAT2SEM2020</title>
+  <link rel="stylesheet" href="mickcustom.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="highlight/styles/monokai.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="highlight/highlight.pack.js"></script>
+  <script src="lightbulb.js"></script>
+  <script src="anychart-installation-package-8.7.1/js/anychart-base.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">Mick Larsen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Forside</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Opgaver
+            </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item active" href="ugentlige_opgaver.html">Ugentlige opgaver</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="projekter.html">Projekter</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="noter.html">Noter </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="om.html">Om </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kontakt.html">Kontakt </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- ###################################
+            NAVBAR SLUTTER
+#########################################-->
+
+  <div class="container main_container">
+
+    <div class="jumbotron jumboanypage">
+      <h1 class="display-3">Threads</h1>
+    </div>
+    <!-- ###################################
+              CONTENT BEGYNDER
+  #########################################-->
+
+    <div class="row">
+      <div class="col-md">
+        <h4>Opgaveløsning med threads i Java</h4><br />
+        <br />
+        <p>Koden til opgaverne kan hentes på <a href="https://github.com/MivleDK/Modul1Threads.git">Github her</a></p>
+      </div>
+    </div>
+    <div class="vert-space"></div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h2>Opgaver til mandag <span class="badge badge-success">Grøn</span></h2><br />
+        <p class="text-monospace alert alert-info">Alle opgaverne skal benytte sig af Executors og ikke kodes med tråde direkte.<br />Skriv et program hvor Main tråden laver en række tasks til en ExecutorService (du kan f.eks. tage udgangspunkt i Executor03). <br /> Den første task skal skrive
+          AAA, den næste BBB,CCC osv. op til ZZZ (ialt er der vist 25 tegn). Der skal være 4 worker threads i executor servicen.</p><br />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+
+        <pre><code class="java drop-that-shadow">package dat.sem2.threads;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class mandagOpgEt {
+
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService threadTask = Executors.newFixedThreadPool(4);
+
+        System.out.println(&quot;Main thread starter&quot;);
+
+        for (int counter = 0; counter &lt;= 25; counter++){
+            Runnable task = new taskLetterPrinter(counter);
+            Thread.sleep(100); //S&oslash;rger for, at outputtet kommer i alfabetisk r&aelig;kkef&oslash;lge
+            threadTask.submit(task);
+        }
+        System.out.println(&quot;Main thread is done, waiting for tasks...&quot;);
+        threadTask.shutdown();
+    }
+}
+
+class taskLetterPrinter implements Runnable{
+
+    private int currCount = 0;
+    char currChar = 'a';
+
+    taskLetterPrinter(int counter){
+        currCount = counter;
+        currChar = (char) (currChar + currCount);
+    }
+
+    @Override
+    public void run() {
+        System.out.print(&quot;Task &quot; + currCount + &quot;:\t&quot;);
+        System.out.print(currChar);
+        System.out.print(currChar);
+        System.out.print(currChar);
+
+        System.out.println(&quot;&quot;);
+    }
+}
+</code>
+</pre>
+</div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <p>Ved at anvende Thread.sleep laver vi en lille forsinkelse (100ms) som gør, at hver enkelte tråd kan nå at blive færdig, før den næste. Dette er ikke en optimal løsning, men en mulighed hvis ikke der anvendes synkronisering</p>
+      </div>
+    </div>
+
+    <hr class="vert-space" />
+
+    <div class="vert-space"></div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h2>Opgaver til mandag <span class="badge badge-success">Grøn</span></h2><br />
+        <p class="text-monospace alert alert-info">Læs op på begrebet ‘synchronized’ (f.eks. <a href="http://tutorials.jenkov.com/java-concurrency/synchronized.html">denne side</a>). Ret Executor05sådan at linjerne:</p>
+          <pre>
+            <code ="java drop-that-shadow">int myH = hundred;
+  Thread.sleep( sleepTime ); // simulate some external job taking time
+  myH += 100;
+  hundred = myH;    </code>
+          </pre>
+<p class="text-monospace alert alert-info">bliver sikret mod fejlopdatering.
+Der skal bruges det der kaldes “Synchronized Blocks in Static Methods”. Til review vil der blive spurgt grundigt ind til forståelsen af jeres løsning.</p>
+      </div>
+    </div>
+<div class="vert-space"></div>
+    <div class="row">
+      <div class="col-md">
+        <p>Dette sikres ved at bruge keyworded "Synchronized". Kort fortalt betyder synchronized, at kun én tråd, ad gangen, kan bruge metoden.<br />
+        Hvis man synkroniserer på en statisk metode (Static, som er på class level) skal man synkronisere på class level også. I eksemplet herunder synkroniseres MyTask3 klassen.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md">
+        <pre>
+          <code class="java drop-that-shadow">package dat.sem2.threads;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Executor05 {
+    public static void main(String[] args) {
+        //ExecutorService workingJack = Executors.newSingleThreadExecutor();
+        ExecutorService workingJack = Executors.newFixedThreadPool(3);
+        System.out.println(&quot;Main starts&quot;);
+        for (int count = 0; count &lt; 25; count++) {
+            Runnable task = new MyTask3(count);
+            workingJack.submit(task);
+        }
+        System.out.println(&quot;Main is done&quot;);
+        workingJack.shutdown();
+    }
+}
+
+class MyTask3 implements Runnable {
+
+    private int count = 0;
+    private int sleepTime = 0;
+
+    private static int hundred = 100;
+
+    MyTask3(int cnt) {
+        sleepTime = (int) (Math.random() * 800 + 200); // At least 200 ms, up to one sec
+        count = cnt;
+    }
+
+    @Override
+    public void run() {
+        try {
+            synchronized (MyTask3.class) {
+                int myH = hundred;
+                Thread.sleep(sleepTime); // simulate some external job taking time
+                myH += 100;
+                hundred = myH;
+                System.out.println(&quot;Task: &quot; + count + &quot;: Hundred = &quot; + hundred);
+            }
+        } catch (InterruptedException ex) {
+            System.out.println(&quot;We got interrupted&quot;);
+        }
+    }
+}</code>
+        </pre>
+      </div>
+    </div>
+
+    <hr class="vert-space" />
+
+    <div class="vert-space"></div>
+    <br />
+    <div class="row">
+      <div class="col-md">
+        <h2>Opgaver til mandag <span class="badge badge-warning">Gul</span></h2><br />
+        <p class="text-monospace alert alert-info">Eksempel Executor06 indsætter heltal i en array liste, og hver opgave skriver ud hvor mange elementer der er indsat. Bemærk - nogle gange vil der ikke blive sat 100 elementer ind i listen.</p><br />
+  <p class="font-weight-bold">Til review - forklar hvordan det kan ske</p>
+  <p>Det kan ske fordi opgaven ikke er synkroniseret og bliver tilgået af flere tråde.</p><br />
+  <p class="font-weight-bold">Foreslå en løsning</p>
+  <p>Problemet kan løses ved at synkronisere koden, på samme måde som i eksemplet ovenfor</p><br />
+  <p class="font-weight-bold">Foreslå en løsning der ikke benytter sig af synchronized. <span class="badge badge-danger">Rød</span></p>
+  <p>Vil man  undlade at bruge synchronized kan man istedet lave en "Thread.sleep" i metoden der opretter tasks. På den måde får hver task tid til at udføre sin opgave, inden den næste kommer <til></til></p><br />
+  <p class="font-weight-bold">Løsningen kan se sådan ud:</p>
+</div>
+</div>
+<div class="row">
+  <div class="col-md">
+    <pre>
+      <code class="java drop-that-shadow">package dat.sem2.threads;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Executor06 {
+
+    public static void main(String[] args) throws InterruptedException {
+        ExecutorService workingJack = Executors.newFixedThreadPool(17);
+        System.out.println(&quot;Main starts&quot;);
+        for (int count = 0; count &lt; 100; count++) {
+            Thread.sleep(100);
+            {
+                Runnable task = new MyTask4(count);
+                workingJack.submit(task);
+            }
+        }
+        System.out.println(&quot;Main is done&quot;);
+        workingJack.shutdown();
+    }
+}
+
+class MyTask4 implements Runnable {
+
+    private int count = 0;
+    private int sleepTime = 0;
+
+    private static List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+
+    MyTask4(int cnt) {
+        sleepTime = (int) (Math.random() * 800 + 200); // At least 200 ms, up to one sec
+        count = cnt;
+    }
+
+    @Override
+    public void run() {
+        synchronized (MyTask.class) {
+            list.add(count);
+            System.out.println(&quot;Task: &quot; + count + &quot;: List size = &quot; + list.size());
+        }
+    }
+}</code>
+    </pre>
+  </div>
+</div>
+
+<hr class="vert-space" />
+
+<div class="vert-space"></div>
+<br />
+<div class="row">
+  <div class="col-md">
+    <h2>Opgaver til mandag <span class="badge badge-warning">Gul / Rød</span></h2><br />
+    <p class="text-monospace alert alert-info">De fleste operativ systemer har et program der viser performance af systemet (windows: taskmanager, mac: activity monitor, linux: System Monitor). Lav en variation af et af Executor programmerne der sætter alle dine cores i sving og vis os det til review.</p><br />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md">
+<p>Når man kører concurrent (Samtidig) synkronisering spørger Java operativsystemet om CPU kraft.<br />De tasks der oprettes kører med overlap i en uspecifik rækkefølge. I virkeligheden køres disse tasks ikke 100% samtidigt men anvender et princip der hedder CPU-slicing.<br />Dette betyder at én task køres i få steps, næste task køres med få steps, osv. indtil alle tasks er kørt færdige.<br />
+  <br />Ved parallel synkronisering kører tasks fysisk samtidig, fordelt på CPU'ens kerner. Derfor kræver parallel synkronisering også en multi-core CPU som er relativ standard i dag.
+<br /><br />Til højre ses et eksempel hvor et Java program er blevet kørt og alle fire kerner er blevet "sat i sving" (Læg mærke til den første spike da programmet startede)</p>
+  </div>
+  <div class="col-xs">
+    <a href="img/cpu.png"><img src="img/cpu.png" style="margin: 1em !important;" class="img-fluid rounded mx-auto d-block drop-that-shadow" alt="responsive image"></a>
+  </div>
+</div>
+<hr class="vert-space" />
+
+<div class="row">
+  <div class="col-md">
+    <h2>Opgaver til mandag 2 <span class="badge badge-success">Grøn</span></h2><br />
+    <p class="text-monospace alert alert-info">Med udgangspunkt i picoServer05 laver vi små ændringer for at køre hvert server response ud i en ny tråd. Du skal bruge en ExecutorService som du indsætter lige før while loopet (den jeg kalder workingJack i eksemplerne). Efter while loopet kommer Socket socket = server.accept(); som jo er et blokerende kald, der afventer et nyt request fra en klient/browser.</p><br />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md">
+<p>Coming soon O_o</p>
+  </div>
+
+
+
+
+
+
+
+</div>
+  <!-- Sidste div hører til main container -->
+</body>
+
+</html>
